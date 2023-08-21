@@ -31,7 +31,7 @@ app.post('/send-email', (req, res) => {
 
     const mailOptions = {
         from: 'dattourhappyjourneyvietnam@gmail.com', // Your Gmail email address
-        to: 'thaib6049@gmail.com', // Destination email address
+        to: 'dulichhappyjourney@gmail.com', // Destination email address
         subject: 'Đặt tour từ website',
         html: `
             <p><strong>Tên:</strong> ${from_name}</p>
@@ -154,6 +154,12 @@ app.get('/nam_cam_tuc-tay_an', function (req, res) {
 });
 app.get('/upimg', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'up_img.html'));
+});
+app.get('/gioi_thieu', function (req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'gioi_thieu.html'));
+});
+app.get('/sitemap', function (req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'sitemap.xml'));
 });
 app.use((req, res, next) => {
     res.status(404).send('Đường dẫn không tồn tại');
