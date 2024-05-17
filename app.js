@@ -5,7 +5,7 @@ const multer = require('multer');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5001
 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -141,6 +141,6 @@ app.get('/upimg', function (req, res) {
 app.use((req, res, next) => {
     res.status(404).send('Đường dẫn không tồn tại');
 });
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
