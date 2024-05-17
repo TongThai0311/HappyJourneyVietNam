@@ -65,6 +65,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
+// Thiết lập multer để xử lý tải ảnh lên
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join(__dirname, 'public','img'));
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+const upload = multer({ storage: storage });
+
+// Xử lý yêu cầu POST từ client để tải ảnh lên
+app.post('/upload', upload.single('image'), (req, res) => {
+    res.send('Image uploaded successfully');
+});
+
+
 // Serve HTML files
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
