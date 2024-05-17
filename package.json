@@ -1,18 +1,16 @@
 {
   "name": "express",
   "version": "1.0.0",
-  "description": "Simple Express.js + Vercel example that uses Vercel Postgres to add and display users in a table.",
-  "main": "index.ts",
+  "description": "Express.js + MongoDB",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node api/index.ts"
+    "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tống Thái",
   "license": "ISC",
   "dependencies": {
-    "@vercel/analytics": "^1.2.2",
-    "@vercel/postgres": "^0.7.2",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.1",
     "ejs": "^3.1.10",
