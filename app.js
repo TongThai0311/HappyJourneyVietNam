@@ -81,7 +81,6 @@ app.get('/hainam_tama_haihoadao', function (req, res) {
 app.get('/hoang_son-vong_tien_coc-thuy_muc_hoanh_thon', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'hoang_son-vong_tien_coc-thuy_muc_hoanh_thon.html'));
 });
-
 app.get('/tay_an-lac_duong-thieu_lam_tu-khai_phong-trinh_chau', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'tay_an-lac_duong-thieu_lam_tu-khai_phong-trinh_chau.html'));
 });
@@ -141,7 +140,7 @@ app.get('/upimg', function (req, res) {
 });
 app.use((req, res, next) => {
     res.status(404).send('Đường dẫn không tồn tại');
-  });
+});
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
