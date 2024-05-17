@@ -78,3 +78,28 @@
   border-radius: 25px;
 }
 
+#carousel-t .icon.ion-android-arrow-dropright-circle {
+  font-size: 40px;
+  color: rgba(0,0,0,0.15);
+  transition: color .3s;
+  height: 100%;
+  width: 100%;
+}
+
+#carousel-t .icon.ion-android-arrow-dropright-circle:hover {
+  color: rgba(0,0,0,0.35);
+  transition: color .3s;
+}
+
+#carousel-t .icon.ion-android-arrow-dropleft-circle {
+  font-size: 40px;
+  color: rgba(0,0,0,0.15);
+  height: 100%;
+  width: 100%;
+}
+
+#carousel-t .icon.ion-android-arrow-dropleft-circle:hover {
+  color: rgba(0,0,0,0.35);
+  transition: color .3s;
+}
+

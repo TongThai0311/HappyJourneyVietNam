@@ -1,0 +1,250 @@
+[
+    {
+        "link_anh": "assets/img/hanoi_city_tour.jpg",
+        "link": "",
+        "ten_tour": "Hà Nội city Tour",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/moc_chau.jpg",
+        "link": "",
+        "ten_tour": "Mộc Châu",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/mai_chau.jpg",
+        "link": "",
+        "ten_tour": "Mai Châu",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/dien_bien.jpg",
+        "link": "",
+        "ten_tour": "Điện Biên",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/sapa.jpg",
+        "link": "",
+        "ten_tour": "Sapa",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/mu_cang_chai.jpg",
+        "link": "",
+        "ten_tour": "Mù Cang Chải",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/ha_giang.jpg",
+        "link": "",
+        "ten_tour": "Hà Giang - Cột cờ Lũng Cú - sông Nho Quế",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/cao_bang.jpg",
+        "link": "",
+        "ten_tour": "Cao Bằng - Thác Bản Giốc",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/ha_long.webp",
+        "link": "",
+        "ten_tour": "Hạ Long",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/cat_ba.jpg",
+        "link": "",
+        "ten_tour": "Cát Bà",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/tra_co.jpg",
+        "link": "",
+        "ten_tour": "Móng Cái - Trà Cổ",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/quan_lan.webp",
+        "link": "",
+        "ten_tour": "Quan Lạn",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/co_to.jpg",
+        "link": "",
+        "ten_tour": "Cô Tô",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Bắc",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/quang_binh.jpg",
+        "link": "",
+        "ten_tour": "Quảng Bình - Động Phong Nha Kẻ Bàng",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/quang_tri.png",
+        "link": "",
+        "ten_tour": "Quảng Trị",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/hue.jpg",
+        "link": "",
+        "ten_tour": "Huế",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/hoi_an.jpg",
+        "link": "",
+        "ten_tour": "Đà Nẵng - Hội An",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/my_son.jpg",
+        "link": "",
+        "ten_tour": "Thánh Địa Mỹ Sơn",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/phu_yen.jpg",
+        "link": "",
+        "ten_tour": "Phú Yên",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/quy_nhon.jpg",
+        "link": "",
+        "ten_tour": "Quy Nhơn",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/nha_trang.jpg",
+        "link": "",
+        "ten_tour": "Nha Trang",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/da_lat.webp",
+        "link": "",
+        "ten_tour": "Đà Lạt",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Trung",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/saigon_city_tour.jpg",
+        "link": "",
+        "ten_tour": "Sài Gòn city tour",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/nui_ba_den.jpg",
+        "link": "",
+        "ten_tour": "Tây Ninh - núi Bà Đen",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/cu_chi.jpg",
+        "link": "",
+        "ten_tour": "Địa đạo Củ Chi",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/mien_tay.jpg",
+        "link": "",
+        "ten_tour": "Miền Tây sông nước",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/cai_rang.webp",
+        "link": "",
+        "ten_tour": "Cần Thơ - chợ nổi Cái Răng",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/ca_mau.jpg",
+        "link": "",
+        "ten_tour": "Đất mũi Cà Mau",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/an_giang.jpg",
+        "link": "",
+        "ten_tour": "An Giang - Đồng Tháp",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/phu_quoc.webp",
+        "link": "",
+        "ten_tour": "Phú Quốc",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    },
+    {
+        "link_anh": "assets/img/con_dao.png",
+        "link": "",
+        "ten_tour": "Côn Đảo",
+        "noi_khoi_hanh": "Hà Nội",
+        "mien": "Nam",
+        "gia": "Liên hệ"
+    }
+]
