@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "-webkit-text-size-adjust",
+          "-webkit-tap-highlight-color",
+          "-moz-backface-visibility",
+          "text-decoration-skip-ink",
+          "-webkit-overflow-scrolling",
+          "orphans",
+          "widows",
+          "backdrop-filter",
+          "-ms-grid-row-align",
+          "@page",
+          "@page"
+        ]
+      }
+    ]
+  }
+}

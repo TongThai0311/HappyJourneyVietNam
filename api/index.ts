@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+<<<<<<< HEAD
 const path = require('path');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -23,6 +24,16 @@ mongoose.connect(process.env.MONGODB_URL,{
   .catch(error => {
       console.error('Error connecting to MongoDB:', error);
   });
+=======
+const multer = require('multer');
+const path = require('path');
+
+const app = express();
+import { inject } from '@vercel/analytics'; 
+inject();
+
+
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 
 
 
@@ -77,9 +88,13 @@ app.post('/send-email', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+<<<<<<< HEAD
 app.get('/ds_tour_nuoc_ngoai', function (req, res) {
     res.sendFile(path.join(__dirname, '..', 'views', 'ds_tour_nuoc_ngoai.html'));
 });
+=======
+
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 });
@@ -95,6 +110,12 @@ app.get('/hainam_tama_haihoadao', function (req, res) {
 app.get('/dattour', function (req, res) {
     res.sendFile(path.join(__dirname, '..', 'views', 'dattour.html'));
 });
+<<<<<<< HEAD
+=======
+app.get('/ds_tour_nuoc_ngoai', function (req, res) {
+    res.sendFile(path.join(__dirname, '..', 'views', 'ds_tour_nuoc_ngoai.html'));
+});
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 app.get('/ds_tour_trong_nuoc', function (req, res) {
     res.sendFile(path.join(__dirname, "..", 'views', 'ds_tour_trong_nuoc.html'));
 });
@@ -146,6 +167,12 @@ app.get('/nam_ninh-le_giang-shangrila', function (req, res) {
 app.get('/nam_cam_tuc-tay_an', function (req, res) {
     res.sendFile(path.join(__dirname, "..", 'views', 'nam_cam_tuc-tay_an.html'));
 });
+<<<<<<< HEAD
+=======
+app.get('/upimg', function (req, res) {
+    res.sendFile(path.join(__dirname, "..", 'views', 'up_img.html'));
+});
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 app.use((req, res, next) => {
     res.status(404).send('Đường dẫn không tồn tại');
   });

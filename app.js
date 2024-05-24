@@ -1,6 +1,7 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+<<<<<<< HEAD
 const path = require('path');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -8,10 +9,15 @@ const morgan = require("morgan");
 const dotenv = require('dotenv');
 const Tour = require('./models/ds_tour_nuoc_ngoai');
 dotenv.config();
+=======
+const multer = require('multer');
+const path = require('path');
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 
 const app = express();
 const port = 3000;
 
+<<<<<<< HEAD
 app.use(cors());
 app.use(morgan("common"));
 
@@ -27,11 +33,20 @@ mongoose.connect(process.env.MONGODB_URL,{
 .catch(error => {
     console.error('Error connecting to MongoDB:', error);
 });
+=======
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://dattourhappyjourneyvietnam:Thai4027@@cluster0.0i2dlf0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 
 
 
 // Middleware để xử lý dữ liệu gửi từ form
 app.use(bodyParser.urlencoded({ extended: false }));
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 // Định nghĩa endpoint để xử lý gửi email từ form
 const transporter = nodemailer.createTransport({
     // Thay thế các thông tin này bằng thông tin SMTP của bạn
@@ -41,6 +56,10 @@ const transporter = nodemailer.createTransport({
         pass: 'uudqwsmvvasjnvxz'
     }
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 app.post('/send-email', (req, res) => {
     const { from_name, from_phone, from_email, from_start, from_end, calltime, comments } = req.body;
 
@@ -75,12 +94,16 @@ app.post('/send-email', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+<<<<<<< HEAD
 // Serve HTML files
 app.get('/ds_tour_nuoc_ngoai', async (req, res) => {    
     res.sendFile(path.join(__dirname, 'views', 'ds_tour_nuoc_ngoai.html'));  
@@ -99,6 +122,10 @@ app.get('/ds_tour_nuoc_ngoai_data', async (req, res) => {
         res.status(500).json({ error: 'Server Error' });
     }
 });
+=======
+
+// Serve HTML files
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
@@ -114,6 +141,10 @@ app.get('/hainam_tama_haihoadao', function (req, res) {
 app.get('/hoang_son-vong_tien_coc-thuy_muc_hoanh_thon', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'hoang_son-vong_tien_coc-thuy_muc_hoanh_thon.html'));
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 app.get('/tay_an-lac_duong-thieu_lam_tu-khai_phong-trinh_chau', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'tay_an-lac_duong-thieu_lam_tu-khai_phong-trinh_chau.html'));
 });
@@ -150,9 +181,15 @@ app.get('/tay_tang_mot_chang_tau', function (req, res) {
 app.get('/dattour', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'dattour.html'));
 });
+<<<<<<< HEAD
 // app.get('/ds_tour_nuoc_ngoai', function (req, res) {
 //     res.sendFile(path.join(__dirname, 'views', 'ds_tour_nuoc_ngoai.html'));
 // });
+=======
+app.get('/ds_tour_nuoc_ngoai', function (req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'ds_tour_nuoc_ngoai.html'));
+});
+>>>>>>> cb08677c2b0ea084ccf008e543fb3eb74adae99d
 app.get('/ds_tour_trong_nuoc', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'ds_tour_trong_nuoc.html'));
 });
