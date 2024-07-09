@@ -1,11 +1,35 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const path = require('path');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const morgan = require("morgan");
+const dotenv = require('dotenv');
+const Tour = require('./models/ds_tour_nuoc_ngoai');
+dotenv.config();
+
 const multer = require('multer');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5001
+
+app.use(cors());
+app.use(morgan("common"));
+
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URL,{
+  dbName: 'happy_journey_vietnam' // Thay "ten_database" bằng tên của cơ sở dữ liệu của bạn
+})
+.then(() => {
+    console.log('Connected to MongoDB');
+    // Khi kết nối thành công, bạn có thể thực hiện các hành động khác ở đây
+})
+.catch(error => {
+    console.error('Error connecting to MongoDB:', error);
+});
 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -16,6 +40,7 @@ const uri = "mongodb+srv://dattourhappyjourneyvietnam:Thai4027@@cluster0.0i2dlf0
 // Middleware để xử lý dữ liệu gửi từ form
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
 // Định nghĩa endpoint để xử lý gửi email từ form
 const transporter = nodemailer.createTransport({
     // Thay thế các thông tin này bằng thông tin SMTP của bạn
@@ -25,6 +50,7 @@ const transporter = nodemailer.createTransport({
         pass: 'uudqwsmvvasjnvxz'
     }
 });
+
 
 app.post('/send-email', (req, res) => {
     const { from_name, from_phone, from_email, from_start, from_end, calltime, comments } = req.body;
@@ -60,9 +86,31 @@ app.post('/send-email', (req, res) => {
     });
 });
 
+
+
+
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Serve HTML files
+app.get('/ds_tour_nuoc_ngoai', async (req, res) => {    
+    res.sendFile(path.join(__dirname, 'views', 'ds_tour_nuoc_ngoai.html'));  
+});
+app.get('/ds_tour_nuoc_ngoai_data', async (req, res) => {
+    try {
+        // Lấy dữ liệu từ MongoDB
+        const tours = await Tour.find({ khu_vuc: "Trung Quốc" });
+        const tours1 = await Tour.find({ khu_vuc: "Nam Á" });
+        const tours2 = await Tour.find({ khu_vuc: "Tour trải nhiệm đặc biệt" });
+
+        // Trả về dữ liệu dưới dạng JSON
+        res.json({ tours, tours1, tours2 });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server Error' });
+    }
+});
 
 
 // Thiết lập multer để xử lý tải ảnh lên
@@ -98,6 +146,9 @@ app.get('/hainam_tama_haihoadao', function (req, res) {
 app.get('/hoang_son-vong_tien_coc-thuy_muc_hoanh_thon', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'hoang_son-vong_tien_coc-thuy_muc_hoanh_thon.html'));
 });
+
+
+
 app.get('/tay_an-lac_duong-thieu_lam_tu-khai_phong-trinh_chau', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'tay_an-lac_duong-thieu_lam_tu-khai_phong-trinh_chau.html'));
 });
@@ -134,6 +185,10 @@ app.get('/tay_tang_mot_chang_tau', function (req, res) {
 app.get('/dattour', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'dattour.html'));
 });
+// app.get('/ds_tour_nuoc_ngoai', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'views', 'ds_tour_nuoc_ngoai.html'));
+// });
+
 app.get('/ds_tour_nuoc_ngoai', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'ds_tour_nuoc_ngoai.html'));
 });

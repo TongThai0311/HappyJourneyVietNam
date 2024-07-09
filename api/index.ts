@@ -1,6 +1,28 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+
+// const path = require('path');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const morgan = require("morgan");
+const dotenv = require('dotenv');
+const Tour = require('../models/ds_tour_nuoc_ngoai');
+dotenv.config();
+
+
+mongoose.connect(process.env.MONGODB_URL,{
+    dbName: 'happy_journey_vietnam' // Thay "ten_database" bằng tên của cơ sở dữ liệu của bạn
+  })
+  .then(() => {
+      console.log('Connected to MongoDB');
+      // Khi kết nối thành công, bạn có thể thực hiện các hành động khác ở đây
+  })
+  .catch(error => {
+      console.error('Error connecting to MongoDB:', error);
+  });
+
+const multer = require('multer');
 const path = require('path');
 
 
@@ -64,6 +86,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/ds_tour_nuoc_ngoai', function (req, res) {
     res.sendFile(path.join(__dirname, '..', 'views', 'ds_tour_nuoc_ngoai.html'));
 });
+
+app.get('/ds_tour_nuoc_ngoai', function (req, res) {
+    res.sendFile(path.join(__dirname, '..', 'views', 'ds_tour_nuoc_ngoai.html'));
+});
+
+
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 });
@@ -78,6 +106,11 @@ app.get('/login', function (req, res) {
 // });
 app.get('/dattour', function (req, res) {
     res.sendFile(path.join(__dirname, '..', 'views', 'dattour.html'));
+});
+
+
+app.get('/ds_tour_nuoc_ngoai', function (req, res) {
+    res.sendFile(path.join(__dirname, '..', 'views', 'ds_tour_nuoc_ngoai.html'));
 });
 app.get('/ds_tour_trong_nuoc', function (req, res) {
     res.sendFile(path.join(__dirname, "..", 'views', 'ds_tour_trong_nuoc.html'));
@@ -148,9 +181,13 @@ app.get('/gioi_thieu', function (req, res) {
 app.get('/sitemap.xml', function (req, res) {
     res.sendFile(path.join(__dirname, "..", 'views', 'sitemap.xml'));
 });
+
+app.get('/upimg', function (req, res) {
+    res.sendFile(path.join(__dirname, "..", 'views', 'up_img.html'));
+});
 app.use((req, res, next) => {
     res.status(404).send('Đường dẫn không tồn tại');
   });
 app.listen(4000, () => console.log('Server ready on port 4000.'));
 
-module.exports = app;
+module.exports = app

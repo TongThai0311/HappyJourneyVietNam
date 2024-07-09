@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Happy Journey Viet Nam là đơn vị chuyên cung cấp các tour du lịch trọn gói tại Việt Nam, Trung Quốc và Nam Á">
+
      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <meta name="description" content="Happy Journey Viet Nam là đơn vị chuyên cung cấp các tour du lịch trọn gói tại Việt Nam, Trung Quốc và Nam Á">
     <meta name="keywords" content="du lịch Việt Nam, du lịch Trung Quốc, du lịch Nam Á">
@@ -96,6 +99,10 @@
             </div>
             <nav class="navbar navbar-light navbar-expand-md" style="padding-top: 0px !important;padding-bottom: 0px !important;">
                 <div class="container-fluid"><a class="navbar-brand" href="/"><img style="width: 250px;" src="assets/img/logo_happy_journey.png" alt=""></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+
+                <div class="container-fluid"><a class="navbar-brand" href="/"><img style="width: 250px;" src="assets/img/logo_happy_journey.png" alt=""></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+
+                <div class="container-fluid"><a class="navbar-brand" href="/"><img style="width: 250px;" src="assets/img/logo happy journey.png" alt=""></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item dropdown" id="1-columna">
@@ -223,6 +230,41 @@
                 <div class="cust_bloglistintro">
                     <p style="margin-left:34px;color:rgba(255,255,255,0.5);font-size:14px;"></p>
                 </div>
+                <div class="row" id="tourList">
+                  
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", async function () {
+                      try {
+                        // Fetch dữ liệu từ route trả về JSON từ server
+                        const response = await fetch('/ds_tour_nuoc_ngoai_data');
+                        const data = await response.json();
+                        const tours = data.tours;
+                  
+                        // Lặp qua mảng tours và thêm mỗi tour vào danh sách
+                        const tourList = document.getElementById('tourList');
+                        tours.forEach(function(tour) {
+                          tourList.innerHTML += `
+                            <div class="col-md-4 cust_blogteaser" data-aos="flip-up" data-aos-delay="50" data-aos-once="true" style="padding-bottom:20px;margin-bottom:32px;">
+                              <div class="card" style="width: 100%;">
+                                <img data-bss-hover-animate="pulse" class="card-img-top" alt="${tour.mo_ta_anh}" src="data:image/jpeg;base64,${tour.anh}">
+                                <div class="card-body">
+                                  <h5 class="card-title">${tour.ten_tour}</h5>       
+                                  <p class="card-text" style="font-size: 15px; margin-bottom: 10px !important;">Nơi khởi hành: ${tour.noi_khoi_hanh}</p>
+                                  <p class="card-text" style="margin-bottom: 10px !important;"><strong>Giá: </strong><span style="color: red; font-size: 16px">${tour.gia}</span></p>
+                                  <a href="/dattour" class="btn btn-success">Đặt tour</a>
+                                  <a href="/${tour.link_trang}" class="btn btn-danger">Chi tiết</a>
+                                </div>
+                              </div>
+                            </div>
+                          `;
+                        });
+                      } catch (error) {
+                        console.error(error);
+                      }
+                    });
+                  </script>
+
                 <div class="row">
 
                   <div class="col-md-4 cust_blogteaser" data-aos="flip-up" data-aos-delay="50" data-aos-once="true" style="padding-bottom:20px;margin-bottom:32px;">
@@ -643,6 +685,34 @@
                 <div class="cust_bloglistintro">
                     <p style="margin-left:34px;color:rgba(255,255,255,0.5);font-size:14px;"></p>
                 </div>
+                <div class="row">                  
+                  <% tours1.forEach(function(tour) { %>
+                    <div class="col-md-4 cust_blogteaser" data-aos="flip-up" data-aos-delay="50" data-aos-once="true" style="padding-bottom:20px;margin-bottom:32px;">
+                      <div class="card" style="width: 100%;">
+                          <!-- <img data-bss-hover-animate="pulse" src="assets/img/tay_tang.webp" class="card-img-top" alt="..."> -->
+                          <img data-bss-hover-animate="pulse" class="card-img-top" alt="<%= tour.mo_ta_anh %>" src="data:image/jpeg;base64,<%= tour.anh %>">
+                          <div class="card-body">
+                            <h5 class="card-title"><%= tour.ten_tour %></h5>       
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg>                  
+                            <p class="card-text" style="font-size: 15px; margin-bottom: 10px !important;">Nơi khởi hành: <%= tour.noi_khoi_hanh %></p>
+                            <p class="card-text" style="margin-bottom: 10px !important;"><strong>Giá: </strong><span style="color: red; font-size: 16px"><%= tour.gia %></span></p>
+                            <a href="/dattour" class="btn btn-success">Đặt tour</a>
+                            <a href="/<%= tour.link_trang %>" class="btn btn-danger">Chi tiết</a>
+                          </div>
+                        </div>
+                    </div>
+                    <% }); %>                    
+
                 <div class="row">
                     <div class="col-md-4 cust_blogteaser" data-aos="flip-up" data-aos-delay="800" data-aos-once="true" style="padding-bottom:20px;margin-bottom:32px;">
                         <div class="card" style="width: 100%;">
@@ -768,6 +838,33 @@
                     <p style="margin-left:34px;color:rgba(255,255,255,0.5);font-size:14px;"></p>
                 </div>
                 <div class="row">
+                  <% tours2.forEach(function(tour) { %>
+                    <div class="col-md-4 cust_blogteaser" data-aos="flip-up" data-aos-delay="50" data-aos-once="true" style="padding-bottom:20px;margin-bottom:32px;">
+                      <div class="card" style="width: 100%;">
+                          <!-- <img data-bss-hover-animate="pulse" src="assets/img/tay_tang.webp" class="card-img-top" alt="..."> -->
+                          <img data-bss-hover-animate="pulse" class="card-img-top" alt="<%= tour.mo_ta_anh %>" src="data:image/jpeg;base64,<%= tour.anh %>">
+                          <div class="card-body">
+                            <h5 class="card-title"><%= tour.ten_tour %></h5>       
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -0.5 32 32" fill="none">
+                            <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"/>
+                            </svg>                  
+                            <p class="card-text" style="font-size: 15px; margin-bottom: 10px !important;">Nơi khởi hành: <%= tour.noi_khoi_hanh %></p>
+                            <p class="card-text" style="margin-bottom: 10px !important;"><strong>Giá: </strong><span style="color: red; font-size: 16px"><%= tour.gia %></span></p>
+                            <a href="/dattour" class="btn btn-success">Đặt tour</a>
+                            <a href="/<%= tour.link_trang %>" class="btn btn-danger">Chi tiết</a>
+                          </div>
+                        </div>
+                    </div>
+                    <% }); %>                                          
+
                     <div class="col-md-4 cust_blogteaser"data-aos="flip-up" data-aos-delay="1050" data-aos-once="true" style="padding-bottom:20px;margin-bottom:32px;">
                         <div class="card" style="width: 100%;">
                             <img data-bss-hover-animate="pulse" src="assets/img/dong_timor.jpg" class="card-img-top" alt="...">
@@ -960,6 +1057,8 @@
                 <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
             </svg>
         </a>
+
+
         <script></script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
